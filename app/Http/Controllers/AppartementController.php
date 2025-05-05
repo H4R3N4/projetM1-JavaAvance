@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Appartement;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class AppartementController extends Controller
 {
@@ -83,5 +84,22 @@ class AppartementController extends Controller
         $appartement->delete();
 
         return response()->json(['message' => 'Appartement supprimé avec succès']);
+    }
+
+    /*
+    *   Statistique
+    */
+
+    public function statistiquesLoyers(): JsonResponse
+    {
+        $total = Appartement::sum('loyer');
+        $min = Appartement::min('loyer');
+        $max = Appartement::max('loyer');
+
+        return response()->json([
+            'total_loyer' => $total,
+            'minimum_loyer' => $min,
+            'maximum_loyer' => $max,
+        ]);
     }
 }
