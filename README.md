@@ -17,7 +17,7 @@ Assurez-vous d'avoir les éléments suivants installés :
 1. **Cloner le dépôt**
 
 éxecuter avec git bash
-git clone https://github.com/nom-utilisateur/nom-du-projet.git
+git clone https://github.com/nom-utilisateur/nom-du-projet.git](https://github.com/H4R3N4/projetM1-JavaAvance.git
 cd nom-du-projet
 
 2. Installer les dépendances php
